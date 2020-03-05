@@ -7,9 +7,11 @@ end
 #byebug
 def current_person
 #if session[:person_id]
-    #@current_person ||= Person.find(session[:person_id]) if session[:person_id]
+   # @current_person ||= Person.find(session[:person_id]) if session[:person_id]
 if session[:person_id]
     Person.find(session[:person_id])
+else
+    nil
 end
 #end
 end 

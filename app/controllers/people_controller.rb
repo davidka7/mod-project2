@@ -2,11 +2,12 @@ class PeopleController < ApplicationController
    #skip_before_action :authorized, only[:new, :create]
    #before_action :authorized
    before_action :authorized
-  skip_before_action :authorized, only: [:index, :new]
+  skip_before_action :authorized, only: [:index, :new, :create]
    
     def show
     
         @person = Person.find(params[:id])
+        @topics = Topic.all.select{|topic| topic.person_id == @person.id}
     end 
 
 
@@ -15,7 +16,9 @@ class PeopleController < ApplicationController
         @person = Person.new
     end
     def create
+        
         @person = Person.create(params_people)
+       # byebug
         if @person.valid?
         
         redirect_to people_path

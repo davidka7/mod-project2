@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2020_03_04_212846) do
 
   create_table "topics", force: :cascade do |t|
     t.string "label"
+    t.integer "person_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

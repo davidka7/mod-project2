@@ -1,3 +1,32 @@
 // Place all the styles related to the people controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.top-div {
+    width: 300px;
+    height: 450px;
+    position: relative;
+    border: solid 1px rgb(119, 45, 45);
+}
+
+.top-div {
+    width: 110%;
+    height: 170%;
+    position: absolute;
+    background: url("https://i1.wp.com/9to5mac.com/wp-content/uploads/sites/6/2019/11/how-to-quickly-select-move-delete-notes-iphone-ipad-two-finger-tap.jpeg?w=1500&quality=82&strip=all&ssl=1");
+    background-size: cover;
+    content: '';
+    -webkit-animation: spinX 6s 1;
+    animation: spinX 6s 1;
+}
+
+@-webkit-keyframes spinX
+{  
+0%   {-webkit-transform: rotateX(0deg); -webkit-transform-origin: 0% 25% 50% 75% 0;}  
+100% {-webkit-transform: rotateX(360deg); -webkit-transform-origin: 0% 25% 50% 75% 0;}  
+}
+@keyframes spinX
+{  
+0%   {transform: rotateX(0deg); transform-origin: 0% 25% 50% 75% 0;}  
+100% {transform: rotateX(360deg); transform-origin: 0% 25% 50% 75% 0;}  
+}

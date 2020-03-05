@@ -13,7 +13,8 @@
         <%end%>
         
         <%@specific.select do |hash|%>
-            <li><h1><%= hash.description%></h1></li> 
+        
+            <li><h<%=hash.size_id%>><%= hash.description%></h<%=hash.size_id%>></li> 
             <%=link_to "edit", edit_note_path(hash)%>
             <%end%>
 

@@ -6,9 +6,10 @@ class TopicsController < ApplicationController
       end
       def new
         @topic = Topic.new
+        #@topics = Topic.all.select{|topic| topic.person_id == current_user.id}.new
       end
       def create
-        @topic = Topic.new(besties)
+        @topic = Topic.new(besties.merge(person_id: current_person.id))
         if @topic.valid?
           @topic.save
           #byebug

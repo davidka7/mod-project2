@@ -5,7 +5,11 @@ class NotesController < ApplicationController
        #  byebug
       end
       def new
-        @note = Note.new
+        @note = Note.new 
+        #byebug
+        @topics = Topic.all.select{|topic| 
+        #byebug
+        topic.person_id == current_person.id}
       end
 
       def create
@@ -27,14 +31,16 @@ class NotesController < ApplicationController
 
       end
       def update
-        @note = Note.find(params[:id])
+        
+       @note = Note.find(params[:id])
         @note.update(besties)
-        if @note
-         
+        #byebug
+        if @note.valid?
+         @note.save
           #byebug
           redirect_to person_path(session[:person_id])
         else
-          
+          flash[:error] = @note.errors.full_messages
           render :edit
          #  <%= f.collection_select , Power.all, :id, :name %>
     
