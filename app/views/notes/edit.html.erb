@@ -1,0 +1,10 @@
+<h2><%= flash[:error] %></h2>
+
+
+<h1>Edit Note</h1>
+<%= form_for(@note) do |f|%>
+    <h1>Description</h1>
+    <%= f.text_field :description%>
+    
+    <%= f.submit %>
+    <% end %>

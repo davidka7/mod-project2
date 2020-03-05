@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-    
+  before_action :authorized
     def show
         @topic = Topic.find(params[:id])
        #  byebug

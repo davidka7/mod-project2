@@ -1,4 +1,5 @@
 class NotesController < ApplicationController
+  before_action :authorized
     def show
         @note = Note.find(params[:id])
        #  byebug
@@ -6,7 +7,9 @@ class NotesController < ApplicationController
       def new
         @note = Note.new
       end
+
       def create
+        #byebug
         @note = Note.new(besties)
         if @note.valid?
           @note.save
@@ -19,10 +22,33 @@ class NotesController < ApplicationController
     
         end
       end
+      def edit
+        @note = Note.find(params[:id])
+
+      end
+      def update
+        @note = Note.find(params[:id])
+        @note.update(besties)
+        if @note
+         
+          #byebug
+          redirect_to person_path(session[:person_id])
+        else
+          
+          render :edit
+         #  <%= f.collection_select , Power.all, :id, :name %>
+    
+        end
+
+      end
         private
 
         def besties
-            params.require(:note).permit(:description, :topic_id, :size_id)
+          #byebug
+            params.require(:note).permit(:description, :size_id, topic_ids:[])
           end
-          
+          #topics_attributes:[:label]
 end
+#<%= f.fields_for :topics, @note.topics.build do |topics_fields| %>
+ # <%= topics_fields.text_field :label %>
+#<% end %>

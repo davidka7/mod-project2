@@ -5,5 +5,6 @@ class CreateNoteTopics < ActiveRecord::Migration[6.0]
       t.integer :topic_id
       t.timestamps
     end
+   # add_index :topics, [:person_id, :username]
   end
 end

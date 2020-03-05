@@ -12,3 +12,7 @@ Rails.application.routes.draw do
   # delete '/people/delete' to: "people#destroy"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
+
+#<%=sip.map do |obj|%>
+  #<%=obj.description%>
+  #<%end%>

@@ -1,14 +1,20 @@
 class Note < ApplicationRecord
    
-    has_many :topics
-    has_many :note_topics, through: :topics
+    has_many :note_topics
+    has_many :topics, through: :note_topics
+    # accepts_nested_attributes_for :topics
+    def topics_attributes=(topic_attributes)
+     topic_attributes.values.each do |topic_attribute|
+        topic = Topic.find_or_create_by(topic_attribute)
+        self.topics << topic
+      end
+    end
     belongs_to :size
     
     validates :description, :length => {
     :minimum   => 10,
-    :maximum   => 300,
+    :maximum   => 300
     
-    :too_short => "must have at least %{10} words",
-    :too_long  => "must have at most %{300} words"
+    
   }
 end

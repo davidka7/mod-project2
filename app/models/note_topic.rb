@@ -1,4 +1,4 @@
 class NoteTopic < ApplicationRecord
-    belongs_to :notes
-    belongs_to :topics
+    belongs_to :note
+    belongs_to :topic
 end

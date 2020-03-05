@@ -1,6 +1,9 @@
 class PeopleController < ApplicationController
-    
-    
+   #skip_before_action :authorized, only[:new, :create]
+   #before_action :authorized
+   before_action :authorized
+  skip_before_action :authorized, only: [:index, :new]
+   
     def show
     
         @person = Person.find(params[:id])

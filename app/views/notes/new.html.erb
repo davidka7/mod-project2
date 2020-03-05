@@ -8,6 +8,7 @@
     <h1>Size Of Text Range: Small 5-1 Large</h1>
     <%= f.collection_select :size_id, Size.all, :id, :size%>
     <h1>Choose Topic To Match Note</h1>
-    <%= f.collection_select :topic_ids, Topic.all, :id, :label%>
+    <%= f.collection_check_boxes :topic_ids, Topic.all, :id, :label%>
+   
     <%= f.submit %>
     <% end %>

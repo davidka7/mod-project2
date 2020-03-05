@@ -5,7 +5,8 @@ Username: <%= @person.username %>
     <%= button_to 'Logout', '/logout', method: :delete%>
     <h1>Choose A Topic To See Your Notes/</h1>
     <%Topic.all.each do |object|%>
-        <li><%=link_to object.label, topic_path%></li>
+        
+        <li><%=link_to object.label, topic_path(object.id)%></li>
         <%end%>
 
 

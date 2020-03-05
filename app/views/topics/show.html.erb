@@ -1,4 +1,23 @@
-<%=@topic%>
+
+<%  Note.all.map do |object|%>
+
+  <% object.id == 1%>
+
+  <%end%>
+
+  <%@topic.note_ids%>
+  <% @topic.note_topics.select do |objects|%>
+    <% %>
+    <% @specific = Note.all.select do |object| %>
+        <%object.id == objects.note_id%>
+        <%end%>
+        
+        <%@specific.select do |hash|%>
+            <li><h1><%= hash.description%></h1></li> 
+            <%=link_to "edit", edit_note_path(hash)%>
+            <%end%>
 
 
-    
+
+
+    <%end%>
