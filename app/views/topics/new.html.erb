@@ -1,0 +1,10 @@
+<% if !!flash[:errors] %>
+<%= flash[:errors] %>
+<% end %>
+
+<h1>New Topic </h1>
+<%= form_for(@topic) do |f| %>
+    <%= f.text_field :label %>
+
+    <%= f.submit %>
+<%end%>

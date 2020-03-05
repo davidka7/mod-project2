@@ -1,0 +1,25 @@
+Username: <%= @person.username %>
+
+<% if @person.id == session[:person_id] %>
+    <%= button_to 'DELETE', '/people/:id', method: :delete%>
+    <%= button_to 'Logout', '/logout', method: :delete%>
+    <h1>Choose A Topic To See Your Notes/</h1>
+    <%Topic.all.each do |object|%>
+        <li><%=link_to object.label, topic_path%></li>
+        <%end%>
+
+
+    <h1>Create A New Topic/</h1>
+    <%=link_to 'Create New Topic', new_topic_path%>
+    
+    
+    <h1>Create A New Note/</h1>
+    <%=link_to 'Create New Note', new_note_path%>
+    
+    
+    <h1></h1>
+
+
+
+    <%end%>
+

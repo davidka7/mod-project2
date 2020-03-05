@@ -1,0 +1,15 @@
+<h1>Sign up</h1>
+
+
+    <h2><%= flash[:error] %></h2>
+   
+
+<%= form_for @person do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %> 
+        
+  <%= f.label :password %>
+  <%= f.text_field :password %>
+  Max:12;Min:6
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,13 @@
+<h2><%= flash[:error] %></h2>
+
+
+<h1>Create New Note</h1>
+<%= form_for(@note) do |f|%>
+    <h1>Description</h1>
+    <%= f.text_field :description%>
+    <h1>Size Of Text Range: Small 5-1 Large</h1>
+    <%= f.collection_select :size_id, Size.all, :id, :size%>
+    <h1>Choose Topic To Match Note</h1>
+    <%= f.collection_select :topic_ids, Topic.all, :id, :label%>
+    <%= f.submit %>
+    <% end %>
