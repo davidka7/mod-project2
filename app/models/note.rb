@@ -12,7 +12,6 @@ class Note < ApplicationRecord
     belongs_to :size
     
     validates :description, :length => {
-    :minimum   => 10,
     :maximum   => 300
     
     

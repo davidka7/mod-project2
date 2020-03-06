@@ -13,7 +13,7 @@ class NotesController < ApplicationController
       end
 
       def create
-        byebug
+       # byebug
         @note = Note.new(besties)
         if @note.valid?
           @note.save
