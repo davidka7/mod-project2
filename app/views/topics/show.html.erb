@@ -13,10 +13,27 @@
         <%end%>
         
         <%@specific.select do |hash|%>
+          
+          <div class="image">
+          <li>
+
+          <br>
+ 
+         
+         <h<%=hash.size_id%>>
+         <br> 
+         <br>
         
-            <h<%=hash.size_id%>><%= hash.description%> &nbsp; &nbsp; <%=link_to "edit", edit_note_path(hash)%> 
+       <%= hash.description%> &nbsp; &nbsp; <%=link_to "edit", edit_note_path(hash)%> 
             <br> 
+        
+          <br>
+          <br>
+            </li>
             </h<%=hash.size_id%>>
+        
+            </div>
+
            
             <%end%>
 
