@@ -1,14 +1,14 @@
 <h2><%= flash[:error] %></h2>
 
 
-<h1>Create New Note</h1>
+<h5>Create New Note</h5>
 <%= form_for(@note) do |f|%>
-    <h1>Description</h1>
-    <%= f.text_area :description%>
-    <h1>Size Of Text Range: Small 5-1 Large</h1>
-    <%= f.collection_select :size_id, Size.all, :id, :size%>
-    <h1>Choose Topic To Match Note</h1>
-    <%= f.collection_check_boxes :topic_ids, @topics, :id, :label%>
+    <h2>Description</h2>
+    <h2><%= f.text_area :description%></h2>
+    <h2>Size Of Text</h2>
+    <h2><%= f.collection_select :size_id, Size.all, :id, :size%></h2>
+    <h2>Choose Topic To Match Note</h2>
+    <h2><%= f.collection_check_boxes :topic_ids, @topics, :id, :label%></h2>
    
-    <%= f.submit %>
+    <h3><%= f.submit %></h3>
     <% end %>

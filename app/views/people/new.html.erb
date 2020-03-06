@@ -1,9 +1,9 @@
-<h1>Sign up</h1>
+<h4>Sign up</h4>
 
 
-    <h2><%= flash[:error] %></h2>
+    <h3><%= flash[:error] %></h3>
    
-
+<h2>
 <%= form_for @person do |f| %>
   <%= f.label :username %>
   <%= f.text_field :username %> 
@@ -12,4 +12,5 @@
   <%= f.text_field :password %>
   
   <%= f.submit %>
+  </h2>
 <% end %>
