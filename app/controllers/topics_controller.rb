@@ -20,6 +20,12 @@ class TopicsController < ApplicationController
          #  <%= f.collection_select , Power.all, :id, :name %>
     
         end
+        
+        def destroy
+          @delete = Delete.find(params[:id])
+          @delete.destroy
+          redirect_to people_path
+        end
       end
         private
 
